@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+</head>
+<style>
+	.box{
+		width: 300px;
+		padding: 20px;
+		margin: 20px;
+		border: 4px dashed #ccc;
+	}
+	.box span{
+		color: #999;
+		font-style: italic;
+	}
+	.box .content span{
+		float: left;
+	}
+	.box input{
+        float: right;
+	}
+	.box .content{
+		width:250px;
+		margin:10px 0;
+		padding:20px;
+		border:2px solid #ff6666
+	}
+	textarea{
+		width:250px;
+		height:100px;
+		margin:10px 0;
+		border:1px solid #6699cc;
+	}
+</style>
+<body>
+	<div class="box">
+		<span>点击按钮实现展开和收起文本域的切换</span>
+		<div class="content">
+			<span>请发表你的看法</span><input type="button" value="好的">
+			<div class="text"><textarea name="" id="" cols="30" rows="10"></textarea></div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+            $('.text').hide();
+            $(':button').click(function(){
+            	$('.text').toggle('slow');
+            	$(this).val($(this).val()=="好的"?"我不想说了":"好的");
+            })
+		})
+	</script>
+</body>
+</html>
